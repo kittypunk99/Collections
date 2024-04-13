@@ -16,9 +16,9 @@ public class LottoTipp {
     }
 
     public static Set<LottoTipp> createLottoTipps(int n) {
-        if (n>8145060)throw new IllegalArgumentException("more LottoTipps than possible");
+        if (n > 8145060) throw new IllegalArgumentException("more LottoTipps than possible");
         HashSet<LottoTipp> lottoTipps = new HashSet<>();
-        while (lottoTipps.size() < n){
+        while (lottoTipps.size() < n) {
             lottoTipps.add(new LottoTipp());
         }
         return lottoTipps;

@@ -4,7 +4,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class Statistik {
     private final Set<String> fn;
@@ -24,18 +27,19 @@ public class Statistik {
             throw new RuntimeException(e);
         }
     }
-    public boolean containsFirstName(String firstName){
+
+    public boolean containsFirstName(String firstName) {
         return fn.contains(firstName);
     }
 
-    public int countPupilsWithDoubleBirthdays(){
-       HashSet<String> u = new HashSet<>();
-       HashSet<String> d = new HashSet<>();
-       bd.forEach(s -> {
-           if (!u.add(s)){
-               d.add(s);
-           }
-       });
-       return bd.size()-u.size()+d.size();
+    public int countPupilsWithDoubleBirthdays() {
+        HashSet<String> u = new HashSet<>();
+        HashSet<String> d = new HashSet<>();
+        bd.forEach(s -> {
+            if (!u.add(s)) {
+                d.add(s);
+            }
+        });
+        return bd.size() - u.size() + d.size();
     }
 }

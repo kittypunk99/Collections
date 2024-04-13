@@ -2,9 +2,10 @@ package tests;
 
 import collections.LottoTipp;
 
-import static collections.LottoTipp.*;
+import static collections.LottoTipp.createLottoTipps;
+import static collections.LottoTipp.printCalcGewinn;
 
-public class LottoTippTests extends Thread{
+public class LottoTippTests extends Thread {
     @Override
     public void run() {
         LottoTipp lottoTipp = new LottoTipp();
