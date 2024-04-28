@@ -45,13 +45,13 @@ public class LottoTipp {
     public static int[] calcGewinne(int seconds) {
         int[] a = new int[7];
         long startTime = System.nanoTime();
-        long elapsedTime;
+        long elapsedTime = TimeUnit.NANOSECONDS.toSeconds(System.nanoTime() - startTime);
         LottoTipp l = new LottoTipp();
-        do {
+        while (elapsedTime < seconds) {
             LottoTipp c = new LottoTipp();
             a[l.countEqualsDigits(c)]++;
             elapsedTime = TimeUnit.NANOSECONDS.toSeconds(System.nanoTime() - startTime);
-        } while (elapsedTime < seconds);
+        }
         return a;
     }
 

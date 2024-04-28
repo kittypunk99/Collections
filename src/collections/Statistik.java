@@ -26,7 +26,7 @@ public class Statistik {
         ArrayList<String> b = new ArrayList<>(readLines(firstNamesFile));
         fn = new HashSet<>();
         b.forEach(s -> fn.add(s.split(" ")[0]));
-        bd = new ArrayList<>(readLines(birthdaysFile));
+        bd = readLines(birthdaysFile);
     }
 
     /**
