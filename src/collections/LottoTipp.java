@@ -18,7 +18,7 @@ public class LottoTipp {
      */
     public LottoTipp() {
         while (tipp.size() < 6) {
-            tipp.add((int) (Math.random() * 45 + 1));
+            tipp.add(Integer.valueOf((int) (Math.random() * 45 + 1)));
         }
     }
 
